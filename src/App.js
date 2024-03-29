@@ -11,39 +11,35 @@ import Post from "./Post";
 import PostLayout from "./PostLayout";
 import { useEffect, useState } from "react";
 import { format } from 'date-fns';
+import api from "./api/posts"
 
 function App() {
   const navigate = useNavigate();
-  const [posts, setPosts] = useState([
-    {
-      id: 1,
-      title: "My First Post",
-      datetime: "March 19 2024 12:22;44 AM",
-      body: "Creating an application using React.js."
-    },
-    {
-      id: 2,
-      title: "My second Post",
-      datetime: "March 19 2024 12:25;44 AM",
-      body: "Finding the will to live."
-    },
-    {
-      id: 3,
-      title: "My Third Post",
-      datetime: "March 19 2024 12:27;44 AM",
-      body: "Watching React.js youtube tutorials."
-    },
-    {
-      id: 4,
-      title: "My Fourth Post",
-      datetime: "March 19 2024 12:29;44 AM",
-      body: "Just a sample post for testing purposes."
-    },
-  ])
+  const [posts, setPosts] = useState([])
   const [search, setSearch]= useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [postTitle, setPostTitle] = useState('');
   const [postBody, setPostBody] = useState('');
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get('/posts');
+        setPosts(response.data);
+      }catch (err) {
+        if(err) {
+          if (err.response) {
+            console.log(err.response.data);
+            console.log(err.response.status);
+            console.log(err.response.headers);
+          } else {
+            console.log(`Error: ${err.message}`);
+          }
+        }
+      }
+    }
+    fetchPosts();
+  }, [])
 
   useEffect(() =>{
     const filteredResults = posts.filter((post) =>
