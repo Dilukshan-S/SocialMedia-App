@@ -1,28 +1,28 @@
 {
-    "posts": [
-        {
-            "id": 1,
-            "title": "My First Post",
-            "datetime": "March 19 2024 12:22;44 AM",
-            "body": "Creating an application using React.js."
-          },
-          {
-            "id": 2,
-            "title": "My second Post",
-            "datetime": "March 19 2024 12:25;44 AM",
-            "body": "Finding the will to live."
-          },
-          {
-            "id": 3,
-            "title": "My Third Post",
-            "datetime": "March 19 2024 12:27;44 AM",
-            "body": "Watching React.js youtube tutorials."
-          },
-          {
-            "id": 4,
-            "title": "My Fourth Post",
-            "datetime": "March 19 2024 12:29;44 AM",
-            "body": "Just a sample post for testing purposes."
-          }
-    ]
+  "posts": [
+    {
+      "id": "1",
+      "title": "My First Post",
+      "datetime": "March 19 2024 12:22;44 AM",
+      "body": "Creating an application using React.js."
+    },
+    {
+      "id": "2",
+      "title": "My second Post",
+      "datetime": "March 19 2024 12:25;44 AM",
+      "body": "Finding the will to live."
+    },
+    {
+      "id": "3",
+      "title": "My Third Post",
+      "datetime": "March 19 2024 12:27;44 AM",
+      "body": "Watching React.js youtube tutorials."
+    },
+    {
+      "id": "4",
+      "title": "My Fourth Post",
+      "datetime": "March 19 2024 12:29;44 AM",
+      "body": "Just a sample post for testing purposes."
+    }
+  ]
 }
